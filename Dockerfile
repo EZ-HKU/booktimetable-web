@@ -1,7 +1,8 @@
 FROM python:3.9.18-alpine3.18
-COPY . /app
+COPY requirements.txt /app/requirements.txt
 WORKDIR /app
-# install dependencies with no cache
-RUN pip install --no-cache-dir -r requirements.txt
-EXPOSE 443
+
+RUN pip install --no-cache-dir -r requirements.txt && \
+    rm -f requirements.txt
+    
 CMD ["python", "src/web.py"]
