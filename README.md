@@ -2,7 +2,11 @@
 
 ## Deployment
 ### 1. Prerequisites
-Make sure you have installed `docker` and `docker-compose` on your server.
+* Make sure you have installed `docker` and `docker-compose` on your server.
+* Make sure you have a `mongo database`.
+* Make sure you have a `ssl certificate` for your domain.
+* Make sure you have opened port `80` and `443` on your server.
+
 ### 2. Pull the code
 ```bash
 git clone https://github.com/EZ-HKU/booktimetable-web.git
@@ -11,7 +15,7 @@ git clone https://github.com/EZ-HKU/booktimetable-web.git
 ```bash
 # set environment variables
 export MONGO_LINK=<your mongo link>
-export BOOK_PW=<your booking password>
+export BOOK_PW=<the secret key for flask app (can be any string)>
 ```
 ### 4. Prepare ssl certificate files
 ```bash
@@ -21,7 +25,7 @@ mkdir key
 cp <your key file> key/key.pem
 cp <your cert file> key/cert.pem
 ```
-### 5. Run the code with docker compose
+### 5. Run with docker compose
 ```bash
 docker-compose up -d
 ```
