@@ -1,4 +1,8 @@
 version: "3.7"
+networks:
+  webnet:
+    driver: bridge
+
 services:
   web:
     restart: always
