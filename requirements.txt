@@ -2,4 +2,3 @@ requests
 pymongo
 flask
 flask_login
-gevent
