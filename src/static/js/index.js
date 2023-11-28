@@ -1,0 +1,51 @@
+let fselector = document.getElementById("fselector");
+let rselector = document.getElementById("rselector");
+let check = document.getElementById("check");
+
+let facilities = {
+    "Discussion Room": [],
+    "Study Room": [],
+};
+
+// add options to fselector
+for (let f in facilities) {
+    let option = document.createElement("option");
+    option.value = f;
+    option.innerHTML = f;
+    fselector.appendChild(option);
+}
+
+// creat 19 Discussion Room
+for (let i = 1; i <= 19; i++) {
+    facilities["Discussion Room"].push("Discussion Room " + i);
+}
+
+// creat 10 Study Room
+for (let i = 1; i <= 10; i++) {
+    facilities["Study Room"].push("Study Room " + i);
+}
+
+fselector.addEventListener("change", function() {
+    let f = fselector.value;
+    let rooms = facilities[f];
+    rselector.innerHTML = "";
+    for (let i = 0; i < rooms.length; i++) {
+        let option = document.createElement("option");
+        option.value = rooms[i];
+        option.innerHTML = rooms[i];
+        rselector.appendChild(option);
+    }
+});
+
+
+check.addEventListener("click", function() {
+    let r = rselector.value;
+    if (r == "") {
+        alert("Please select a room");
+        return;
+    }
+
+    let url = window.location.origin + "/timetable/" + r;
+    location.href = url;
+    
+});

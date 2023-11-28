@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  web:
+    restart: always
+    build: .
+    environment:
+      - MONGO_LINK=${MONGO_LINK}
+    networks:
+      - webnet
+  
+  nginx:
+    restart: always
+    image: nginx:mainline-alpine3.18-slim
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./key:/etc/nginx/key
+    depends_on:
+      - web
+    networks:
+      - webnet
