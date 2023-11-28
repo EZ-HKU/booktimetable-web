@@ -1,5 +1,7 @@
+import os
 
 # server
+PW = os.environ.get('BOOK_PW')
 AHEAD_DAYS = 4
 TIME_LIST =  {
     "Discussion Room": [f'{(8300930+i*1000100):>0{8}}' for i in range(12)] + ['20302200'],
