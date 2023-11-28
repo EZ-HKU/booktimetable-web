@@ -1,2 +1,7 @@
 src/__pycache__/
 schedule.html
+README.md
+nginx.conf
+Dockerfile
+docker-compose.yml
+.gitignore
