@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Timetable Prebook</title>
+    <link rel="shortcut icon" href="https://hkuportal.hku.hk/favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-in-container">
+        <!-- <form action="{{ url_for('login') }}" method="post"> -->
+          <h1>Facility prebook Timetable</h1>
+          <!-- add select placeholder -->
+          <select  name="facility" id="fselector">
+            <option value="" disabled selected hidden>Choose Facility</option>
+          </select>
+          <select  name="room" id="rselector">
+            <option value="" disabled selected hidden>Choose Room</option>
+          </select>
+          <button id="check">Check</button>
+        <!-- </form> -->
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>{{room}}</title>
+    <link rel="shortcut icon" href="https://hkuportal.hku.hk/favicon.ico">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/timetable.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="timetable" id="{{room}}">
+        <div class="corner">
+          <div class="function-button">{{name}}</div>
+        </div>
+        <div class="week-names">
+          {% for date in dates %}
+          <div>{{date}}</div>
+          {%endfor%}
+        </div>
+        <div class="time-interval">
+          {% for time in times %}
+          <div>{{time}}</div>
+          {%endfor%}
+        </div>
+        <div class="content">
+          {% for i in range(timelen*7) %}
+          <div class="{{tasks[i]['color']}}" id="{{i}}">
+            {{tasks[i]['state']}}
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <div id="overlay"></div>
+    <script src="{{ url_for('static', filename='js/timetable.js') }}"></script>
+  </body>
+</html>
