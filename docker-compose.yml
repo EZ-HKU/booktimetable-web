@@ -7,6 +7,8 @@ services:
   web:
     restart: always
     build: .
+    volumes:
+      - .:/app
     environment:
       - MONGO_LINK=${MONGO_LINK}
       - BOOK_PW=${BOOK_PW}
