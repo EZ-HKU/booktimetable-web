@@ -39,7 +39,7 @@ def user_loader(user_id):
 
 
 @app.route('/posttest', methods=['POST'])
-# @login_required
+@login_required
 def post():
     if request.method == 'POST':
         temp = str(request.get_data())[2:-1]
@@ -52,7 +52,7 @@ def post():
 
 
 @app.route('/postuser', methods=['POST'])
-# @login_required
+@login_required
 def postu():
     if request.method == 'POST':
         temp = str(request.get_data())[2:-1]
@@ -62,14 +62,14 @@ def postu():
 
 
 @app.route('/getusers', methods=['GET'])
-# @login_required
+@login_required
 def get():
     if request.method == 'GET':
         return ','.join(db.get_users())
 
 
 @app.route('/check', methods=['GET'])
-# @login_required
+@login_required
 def check():
     date = datetime.datetime.now()
     l = []
