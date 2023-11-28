@@ -9,6 +9,7 @@ services:
     build: .
     environment:
       - MONGO_LINK=${MONGO_LINK}
+      - BOOK_PW=${BOOK_PW}
     networks:
       - webnet
   
