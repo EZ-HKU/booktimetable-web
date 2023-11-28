@@ -1,7 +1,5 @@
-import os
 
 # server
-PW = os.environ.get('BOOK_PW')
 AHEAD_DAYS = 4
 TIME_LIST =  {
     "Discussion Room": [f'{(8300930+i*1000100):>0{8}}' for i in range(12)] + ['20302200'],
@@ -9,14 +7,9 @@ TIME_LIST =  {
     "Study Room": [f'{i//2:>0{2}}{"00" if i%2==0 else "30"}{i//2+i%2:>0{2}}{"00" if i%2!=0 else "30"}' for i in range(47)]
     }
 
-DEBUG = True if os.environ.get('AUTOBOOK_DEBUG_MODE') == "1" else False
+DEBUG = False
 PORT = 8080
 
-# sele
-HEADLESS = True
-TIMEOUT = 30
-DRIVER_PATH = {"firefox": '../geckodriver', "chrome": '../chromedriver'}
-DEFAULT_BROWSER = 'chrome'
 
 def DISCUSSION_ROOM(room):
     return int(room.split(' ')[-1]) + 125
@@ -31,7 +24,6 @@ LOGIN_URL = 'https://booking.lib.hku.hk/Secure/FacilityStatusDate.aspx'
 BOOK_URL = 'https://booking.lib.hku.hk/Secure/NewBooking.aspx'
 STATUS_URL = 'https://booking.lib.hku.hk/Secure/MyBookingRecordM.aspx'
 
-TELEBOT_ID = os.environ.get('TELEBOT_ID')
 
 ALL_ROOMS = [f'Discussion Room {i}' for i in range(1, 20)] + [f'Study Room {i}' for i in range(1, 11)]
 

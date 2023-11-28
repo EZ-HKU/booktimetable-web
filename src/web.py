@@ -196,22 +196,12 @@ def index():
 
 
 if __name__ == '__main__':
-    from gevent.pywsgi import WSGIServer
 
     # name = os.environ.get('PREBOOK_WEB_NAME')
-#     app.run(
-#         host='0.0.0.0',
-#         port=PORT,
-#         threaded=True,
-#         debug=DEBUG,
-#         ssl_context=(f'./key/www.prebook.top_bundle.pem', f'./key/www.prebook.top.key')
-# )
-    http_server = WSGIServer(
-        ('0.0.0.0', PORT),
-        app,
-
-
-        # keyfile=f'./key/www.prebook.top.key',
-        # certfile=f'./key/www.prebook.top_bundle.pem',
+    app.run(
+        host='0.0.0.0',
+        port=PORT,
+        threaded=True,
+        debug=DEBUG,
     )
-    http_server.serve_forever()
+
