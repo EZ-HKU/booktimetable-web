@@ -27,5 +27,5 @@ cp <your cert file> key/cert.pem
 ```
 ### 5. Run with docker compose
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
