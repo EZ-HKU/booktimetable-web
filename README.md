@@ -1,4 +1,7 @@
 # HKU library facilities auto-booking website
+> The website is extracted from a private project [autobook](https://github.com/adlsdztony/autobook).
+
+> NOTE: This website only add tasks to the database, you should book the tasks regularly with other scripts. ( e.g. [hkulibrary](https://github.com/adlsdztony/hkulibrary) )
 
 ## Deployment
 ### 1. Prerequisites
