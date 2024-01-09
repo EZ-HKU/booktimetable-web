@@ -3,12 +3,16 @@ networks:
   webnet:
     driver: bridge
 
+volumes:
+  mongodata:
+    driver: local
+
 services:
   mongo:
     restart: always
     image: mongo:4.4.6
     volumes:
-      - ./mongo:/data/db
+      - mongodata:/data/db
     networks:
       - webnet
     environment:
