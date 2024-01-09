@@ -32,3 +32,17 @@ cp <your cert file> key/cert.pem
 ```bash
 docker compose up -d
 ```
+## **For developers**
+### 1. Prerequisites
+* Make sure you have installed `docker` and `docker-compose` on your server.
+* Make sure you have opened port `8080` on your server.
+### 2. Pull the code
+```bash
+git clone https://github.com/EZ-HKU/booktimetable-web.git
+```
+### 3. Run with docker compose
+```bash
+cd booktimetable-web
+docker compose -f docker-compose-dev.yml up -d
+```
+Now you can visit the website at `http://<your server ip>:8080`.

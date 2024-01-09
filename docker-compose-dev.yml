@@ -1,0 +1,26 @@
+version: "3.7"
+networks:
+  webnet:
+    driver: bridge
+
+services:
+  mongo:
+    restart: always
+    image: mongo:4.4.6
+    volumes:
+      - ./mongo:/data/db
+    networks:
+      - webnet
+
+  web:
+    restart: always
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - MONGO_LINK=mongodb://mongo:27017
+      - BOOK_PW=any_password
+    networks:
+      - webnet
+    ports:
+      - "8080:80"
