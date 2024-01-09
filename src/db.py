@@ -13,6 +13,8 @@ db = pymongo.MongoClient(MONGO_LINK).booking
 users = db.user
 log = db.log
 
+if DEBUG and len(list(users.find({}))) == 0:
+    users.insert_one({'id': 'admin', 'pw': '123456', 'name': 'admin'})
 
 def add_user(id, pw, name):
     user = {

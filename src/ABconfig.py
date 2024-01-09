@@ -9,7 +9,7 @@ TIME_LIST =  {
     "Study Room": [f'{i//2:>0{2}}{"00" if i%2==0 else "30"}{i//2+i%2:>0{2}}{"00" if i%2!=0 else "30"}' for i in range(47)]
     }
 
-DEBUG = False
+DEBUG = os.environ.get('BOOKING_DEBUG').lower() == 'true'
 PORT = 8080
 
 

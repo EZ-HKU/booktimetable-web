@@ -9,7 +9,6 @@ services:
     image: mongo:4.4.6
     volumes:
       - ./mongo:/data/db
-      - ./init_mongo:/docker-entrypoint-initdb.d/init.js
     networks:
       - webnet
     environment:
@@ -24,6 +23,7 @@ services:
     environment:
       - MONGO_LINK=mongodb://admin:adminpassword@mongo:27017
       - BOOK_PW=any_password
+      - BOOKING_DEBUG=true
     networks:
       - webnet
     ports:

@@ -1,7 +1,0 @@
-use booking;
-
-db.user.insert({
-    "name": "admin",
-    "id": "admin",
-    "pw": "123456",
-});
