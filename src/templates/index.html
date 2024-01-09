@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8"/>
     <title>Timetable Prebook</title>
-    <link rel="shortcut icon" href="https://hkuportal.hku.hk/favicon.ico" />
+    <link rel="shortcut icon" href="https://hkuportal.hku.hk/favicon.ico"/>
 
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/index.css') }}"
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/index.css') }}"
     />
     <!-- <script src="{{ url_for('static', filename='js/jquery.js') }}"></script> -->
-  </head>
+</head>
 
-  <body>
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
+<body>
+<div class="container" id="container">
+    <div class="form-container sign-in-container">
         <!-- <form action="{{ url_for('login') }}" method="post"> -->
-          <h1>Facility prebook Timetable</h1>
-          <!-- add select placeholder -->
-          <select  name="facility" id="fselector">
+        <h1>Facility prebook Timetable</h1>
+        <!-- add select placeholder -->
+        <select name="facility" id="fselector">
             <option value="" disabled selected hidden>Choose Facility</option>
-          </select>
-          <select  name="room" id="rselector">
+        </select>
+        <select name="room" id="rselector">
             <option value="" disabled selected hidden>Choose Room</option>
-          </select>
-          <button id="check">Check</button>
+        </select>
+        <button id="check">Check</button>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <button class="ghost" id="logOut">Log out</button>
+                </div>
+            </div>
+        </div>
         <!-- </form> -->
-      </div>
     </div>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
-  </body>
+</div>
+
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
 </html>
