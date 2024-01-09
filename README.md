@@ -30,7 +30,7 @@ cp <your cert file> key/cert.pem
 ```
 ### 5. Run with docker compose
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 ## **For developers**
 ### 1. Prerequisites
@@ -43,6 +43,8 @@ git clone https://github.com/EZ-HKU/booktimetable-web.git
 ### 3. Run with docker compose
 ```bash
 cd booktimetable-web
-docker compose -f docker-compose-dev.yml up -d
+docker-compose -f docker-compose-dev.yml up -d
 ```
 Now you can visit the website at `http://<your server ip>:8080`.
+
+The default username and password is `admin` and `123456`.

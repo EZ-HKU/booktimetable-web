@@ -9,6 +9,7 @@ services:
     image: mongo:4.4.6
     volumes:
       - ./mongo:/data/db
+      - ./init_mongo:/docker-entrypoint-initdb.d/init.js
     networks:
       - webnet
     environment:
