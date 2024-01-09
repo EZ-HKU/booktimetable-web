@@ -7,10 +7,11 @@ services:
   mongo:
     restart: always
     image: mongo:4.4.6
-    volumes:
-      - ./mongo:/data/db
     networks:
       - webnet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: adminpassword
 
   web:
     restart: always
@@ -18,9 +19,11 @@ services:
     volumes:
       - .:/app
     environment:
-      - MONGO_LINK=mongodb://mongo:27017
+      - MONGO_LINK=mongodb://admin:adminpassword@mongo:27017
       - BOOK_PW=any_password
     networks:
       - webnet
     ports:
-      - "8080:80"
+      - "8080:8080"
+    depends_on:
+      - mongo
