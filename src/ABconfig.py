@@ -28,7 +28,7 @@ BOOK_URL = 'https://booking.lib.hku.hk/Secure/NewBooking.aspx'
 STATUS_URL = 'https://booking.lib.hku.hk/Secure/MyBookingRecordM.aspx'
 
 
-ALL_ROOMS = [f'Discussion Room {i}' for i in range(1, 20)] + [f'Study Room {i}' for i in range(1, 11)]
+ALL_ROOMS = [f'Discussion Room {i}' for i in range(1, 20)]+ [f'Study Room {i}' for i in range(1, 11)] + [f'Concept and Creation Room {i}' for i in range(1, 6)]
 
 LENLIMIT ={
     'Discussion Room': 2,
