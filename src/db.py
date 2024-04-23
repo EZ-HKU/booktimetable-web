@@ -37,7 +37,7 @@ def add_user(id, pw, name):
 def add_task(date, times, room, username, state='prebooked', book_date=None):
     # check if the task is already in the database
     for time in times:
-        if log.find_one({'date': date, 'times': time}) is not None:
+        if log.find_one({'date': date, 'times': time, 'username': username}) is not None:
             return 'task already exists'
     
     ts = log.find({'date': date, 'username': username, 'room': room[-2]})
