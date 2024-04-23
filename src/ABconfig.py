@@ -32,5 +32,6 @@ ALL_ROOMS = [f'Discussion Room {i}' for i in range(1, 20)]+ [f'Study Room {i}' f
 
 LENLIMIT ={
     'Discussion Room': 2,
-    'Study Room': 4
+    'Study Room': 4,
+    'Concept and Creation Room': 1
 }
