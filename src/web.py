@@ -123,7 +123,7 @@ def cancel_prebook():
     date = datetime.datetime.now() + datetime.timedelta(days=idd % 7)
     date = date.strftime("%Y-%m-%d")
     time = TIME_LIST[roomtype][time]
-    if db.cancel_prebook(str(current_user.id), date, time):
+    if db.cancel_prebook(str(current_user.id), date, time, roomm):
         return 'success'
     else:
         return 'fail to cancel prebook'

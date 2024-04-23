@@ -102,9 +102,9 @@ def check_user(id, pw):
     else:
         return user['pw'] == pw
 
-def cancel_prebook(id, date, time):
+def cancel_prebook(id, date, time, roomm):
     name = users.find_one({'id': id})['name']
-    task = log.find_one({'date': date, 'times': time, 'username': name})
+    task = log.find_one({'date': date, 'times': time, 'username': name, 'room': roomm})
     if task is None:
         return False
     else:
