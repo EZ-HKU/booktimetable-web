@@ -6,7 +6,8 @@ AHEAD_DAYS = 4
 TIME_LIST =  {
     "Discussion Room": [f'{(8300930+i*1000100):>0{8}}' for i in range(12)] + ['20302200'],
     # generate time list for single study room from 00:00-00:30, 00:30-01:00, ..., 23:30-24:00
-    "Study Room": [f'{i//2:>0{2}}{"00" if i%2==0 else "30"}{i//2+i%2:>0{2}}{"00" if i%2!=0 else "30"}' for i in range(47)]
+    "Study Room": [f'{i//2:>0{2}}{"00" if i%2==0 else "30"}{i//2+i%2:>0{2}}{"00" if i%2!=0 else "30"}' for i in range(47)],
+    "Concept and Creation Room": ["08301300", "13001800", "18002200"]
     }
 
 DEBUG = os.environ.get('BOOKING_DEBUG').lower() == 'true'

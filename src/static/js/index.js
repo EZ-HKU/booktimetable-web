@@ -5,6 +5,7 @@ let check = document.getElementById("check");
 let facilities = {
     "Discussion Room": [],
     "Study Room": [],
+    "Concept and Creation Room": [],
 };
 
 // add options to fselector
@@ -23,6 +24,11 @@ for (let i = 1; i <= 19; i++) {
 // creat 10 Study Room
 for (let i = 1; i <= 10; i++) {
     facilities["Study Room"].push("Study Room " + i);
+}
+
+// creat 5 Concept and Creation Room
+for (let i = 1; i <= 5; i++) {
+    facilities["Concept and Creation Room"].push("Concept and Creation Room " + i);
 }
 
 fselector.addEventListener("change", function() {
