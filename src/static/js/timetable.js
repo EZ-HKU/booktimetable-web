@@ -13,19 +13,18 @@ function postTask() {
     let id = $(this).attr('id');
     let room = document.getElementsByClassName("timetable")[0].id;
     $.post('/add_task_by_id', {id: id, room: room}, function(data) {
-        if (data=="success"){
+        if (data==="success"){
             // change button style and function with jquery
             let element = document.getElementById(id);
             element.classList.remove("accent-white-gradient");
             element.classList.add("accent-orange-gradient");
-            let name = document.getElementsByClassName("function-button")[0].innerHTML;
-            element.innerHTML = name;
+            element.innerHTML = document.getElementsByClassName("function-button")[0].innerHTML;
             // rm event listener
             element.removeEventListener("click", postTask);
             element.addEventListener("click", cancelTask);
         } else {
             alert(data)
-        };
+        }
     });
 }
 
@@ -39,7 +38,7 @@ function cancelTask() {
     let id = $(this).attr('id');
     let room = document.getElementsByClassName("timetable")[0].id;
     $.post('/cancel_prebook', {id: id, room: room}, function(data) {
-        if (data=="success"){
+        if (data==="success"){
             // change button style and function with jquery
             let element = document.getElementById(id);
             element.classList.remove("accent-orange-gradient");
@@ -50,7 +49,7 @@ function cancelTask() {
             element.addEventListener("click", postTask);
         } else {
             alert(data)
-        };
+        }
     });
 }
 

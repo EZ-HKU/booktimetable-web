@@ -1,10 +1,10 @@
 let fselector = document.getElementById("fselector");
 let rselector = document.getElementById("rselector");
 let check = document.getElementById("check");
+let logout = document.getElementById("logOut");
 
 let facilities = {
-    "Discussion Room": [],
-    "Study Room": [],
+    "Discussion Room": [], "Study Room": [],
     "Concept and Creation Room": [],
 };
 
@@ -44,14 +44,21 @@ fselector.addEventListener("change", function() {
 });
 
 
-check.addEventListener("click", function() {
+check.addEventListener("click", function () {
     let r = rselector.value;
-    if (r == "") {
+    if (r === "") {
         alert("Please select a room");
         return;
     }
 
-    let url = window.location.origin + "/timetable/" + r;
-    location.href = url;
-    
+    location.href = window.location.origin + "/timetable/" + r;
+
+});
+
+logout.addEventListener("click", function () {
+    if (!confirm("Are you sure to log out?")) {
+        return;
+    }
+
+    location.href = window.location.origin + "/login";
 });
