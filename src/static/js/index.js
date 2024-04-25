@@ -6,6 +6,7 @@ let logout = document.getElementById("logOut");
 let facilities = {
     "Discussion Room": [], "Study Room": [],
     "Concept and Creation Room": [],
+    "Single Study Room (3 sessions)": []
 };
 
 // add options to fselector
@@ -29,6 +30,11 @@ for (let i = 1; i <= 10; i++) {
 // creat 5 Concept and Creation Room
 for (let i = 1; i <= 5; i++) {
     facilities["Concept and Creation Room"].push("Concept and Creation Room " + i);
+}
+
+// create 11 Single Study Room (3 sessions)
+for (let i = 422; i <= 432; i++) {
+    facilities["Single Study Room (3 sessions)"].push("Single Study Room (3 sessions) Room " + i);
 }
 
 fselector.addEventListener("change", function() {
