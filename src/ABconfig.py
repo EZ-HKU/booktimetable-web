@@ -33,7 +33,7 @@ ALL_ROOMS = []
 ALL_ROOMS.extend([f'Discussion Room {i}' for i in range(1, 20)])
 ALL_ROOMS.extend([f'Study Room {i}' for i in range(1, 11)])
 ALL_ROOMS.extend([f'Concept and Creation Room {i}' for i in range(1, 6)])
-ALL_ROOMS.extend([f'Single Study Room (3 sessions) Room {i}' for i in range(422, 424)])
+ALL_ROOMS.extend([f'Single Study Room (3 sessions) Room {i}' for i in range(422, 434)])
 
 LENLIMIT ={
     'Discussion Room': 2,
