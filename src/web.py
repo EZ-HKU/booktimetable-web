@@ -148,7 +148,7 @@ def add_task_by_id():
 @login_required
 def timetable(room):
     if room not in ALL_ROOMS:
-        return redirect(url_for('index'))
+        return 'Invalid Room!'
 
     roomtype = ' '.join(room.split(' ')[:-1])
 

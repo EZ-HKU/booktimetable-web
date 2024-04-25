@@ -29,7 +29,11 @@ BOOK_URL = 'https://booking.lib.hku.hk/Secure/NewBooking.aspx'
 STATUS_URL = 'https://booking.lib.hku.hk/Secure/MyBookingRecordM.aspx'
 
 
-ALL_ROOMS = [f'Discussion Room {i}' for i in range(1, 20)]+ [f'Study Room {i}' for i in range(1, 11)] + [f'Concept and Creation Room {i}' for i in range(1, 6)]
+ALL_ROOMS = []
+ALL_ROOMS.extend([f'Discussion Room {i}' for i in range(1, 20)])
+ALL_ROOMS.extend([f'Study Room {i}' for i in range(1, 11)])
+ALL_ROOMS.extend([f'Concept and Creation Room {i}' for i in range(1, 6)])
+ALL_ROOMS.extend([f'Single Study Room (3 sessions) Room {i}' for i in range(422, 424)])
 
 LENLIMIT ={
     'Discussion Room': 2,
