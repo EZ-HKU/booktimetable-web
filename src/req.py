@@ -31,7 +31,7 @@ class Booker:
             s = requests.Session()
             s.headers.update(headers)
             r = s.get(
-                "https://booking.lib.hku.hk/Secure/FacilityStatusDate.aspx", allow_redirects=False)
+                "https://booking.lib.hku.hk/Secure/FacilityStatusDate.aspx", allow_redirects=False, verify=False)
             r = s.get(
                 "https://lib.hku.hk/hkulauth/legacy/authMain?uri=https://booking.lib.hku.hk/getpatron.aspx")
 
