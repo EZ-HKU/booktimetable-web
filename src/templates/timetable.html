@@ -39,5 +39,9 @@
     <!-- partial -->
     <div id="overlay"></div>
     <script src="{{ url_for('static', filename='js/timetable.js') }}"></script>
+    <!-- if room start with Study Room -->
+    {% if room.startswith('Study Room') %}
+    <script src="{{ url_for('static', filename='js/study_room_edit.js') }}"></script>
+    {% endif %}
   </body>
 </html>

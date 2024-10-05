@@ -40,13 +40,13 @@ def add_task(date, times, room, username, state='prebooked', book_date=None):
         if log.find_one({'date': date, 'times': time, 'username': username}) is not None:
             return 'task already exists'
     
-    ts = log.find({'date': date, 'username': username, 'room': room[-2]})
-    total = 0
-    for t in ts:
-        total += len(t['times'])
-    lenlimit = LENLIMIT[room[-2]]
-    if total >= lenlimit:
-        return 'too many tasks'
+    # ts = log.find({'date': date, 'username': username, 'room': room[-2]})
+    # total = 0
+    # for t in ts:
+    #     total += len(t['times'])
+    # lenlimit = LENLIMIT[room[-2]]
+    # if total >= lenlimit:
+    #     return 'too many tasks'
     
     task = {
         'date': date,

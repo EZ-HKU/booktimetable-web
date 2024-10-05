@@ -11,7 +11,8 @@ TIME_LIST =  {
     "Single Study Room (3 sessions) Room": ["08301300", "13001800", "18002200"],
     }
 
-DEBUG = os.environ.get('BOOKING_DEBUG').lower() == 'true'
+BOOKING_DEBUG = os.environ.get('BOOKING_DEBUG')
+DEBUG = False if BOOKING_DEBUG is None else BOOKING_DEBUG.lower() == 'true'
 PORT = 8080
 
 
