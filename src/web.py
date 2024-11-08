@@ -168,8 +168,10 @@ def timetable(room):
                 color = 'accent-orange-gradient'
             elif task['state'] == 'failed':
                 color = 'accent-red-gradient'
+            elif task['state'] == 'reserved':
+                color = 'accent-VIP-gradient'
             else:
-                continue
+                color = 'accent-red-gradient'
 
             tasks[(date - today).days + TIME_LIST[roomtype].index(time)
                   * 7] = {'state': task['username'], 'color': color}

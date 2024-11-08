@@ -27,6 +27,15 @@ body {
   transform: scale(1.05);
 }
 
+.timetable .accent-VIP-gradient {
+  background: linear-gradient( 135deg, #8e8e8e, #8e8e8e);
+  transition: 0.2s ease box-shadow, 0.2s ease transform;
+}
+.timetable .accent-VIP-gradient:hover {
+  box-shadow: 0 20px 30px 0 rgba(142, 142, 142, 0.3);
+  transform: scale(1.05);
+}
+
 .timetable .accent-orange-gradient {
   background: linear-gradient(135deg, #eec08e, #dcee8e);
   transition: 0.2s ease box-shadow, 0.2s ease transform;

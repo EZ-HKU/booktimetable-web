@@ -58,7 +58,9 @@ for (let i = 0; i < orangeBtn.length; i++) {
     orangeBtn[i].addEventListener("click", cancelTask);
 }
 
-
+$('.accent-VIP-gradient').click(function() { 
+    alert("This time slot is reserved for VIPs only!");
+});
 
 $('.accent-red-gradient').click(function() { 
     alert("This function is not available yet!");
@@ -67,9 +69,6 @@ $('.accent-red-gradient').click(function() {
 $('.accent-blue-gradient').click(function() { 
     alert("This function is not available yet!");
 });
-
-
-
 
 $('.function-button').click(function() { 
     window.location.href = "/";
